@@ -1,6 +1,14 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-.some-style {
-  max-width: 540px;
+.side-navbar {
+  a {
+    text-decoration: none;
+    color: black;
+  };
+  div:hover {
+    background-color: $gray-200;
+    display: inline-flex;
+  }
 }
+
