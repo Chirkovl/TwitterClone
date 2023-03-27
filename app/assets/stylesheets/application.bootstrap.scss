@@ -1,5 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import '_buttons';
+@import '_color';
+
 
 .side-navbar {
   a {
@@ -10,5 +13,9 @@
     background-color: $gray-200;
     display: inline-flex;
   }
+}
+
+.w-button {
+  witdh: 100px;
 }
 
