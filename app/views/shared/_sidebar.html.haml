@@ -41,6 +41,15 @@
           Profile
   %div.mb-3
     %span.fs-4.px-2.py-4
-      = button_tag "Tweet", class: 'btn btn-primary btn-twitter btn-lg rounded-pill w-50 border-0'
+      = button_tag "Tweet", class: 'btn btn-primary btn-twitter btn-lg rounded-pill w-50 border-0', data: { "bs-toggle": "modal", "bs-target": "#exampleModal"}
   %div    
-    = link_to "Log out", destroy_user_session_path, data: {"turbo-method": :delete}, class: 'btn btn-primary btn-lg'
+    = link_to "Log out", destroy_user_session_path, data: {"turbo-method": :delete}, class: 'btn btn-primary btn-lg' 
+
+-# Tweet Form Modal
+%div.modal#exampleModal{tabindex:"-1", aria: {labelledby:"exampleModalLabel", hidden:"true"}}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header.border-bottom-0
+        = button_tag '', class: 'btn-close m-0', data: {bs_dismiss: 'modal'}, aria: {label: 'Close'}
+      %div.modal-body
+        = render 'shared/tweet_form'
