@@ -50,6 +50,6 @@
   %div.modal-dialog
     %div.modal-content
       %div.modal-header.border-bottom-0
-        = button_tag '', class: 'btn-close m-0', data: {bs_dismiss: 'modal'}, aria: {label: 'Close'}
+        = button_tag '', id: 'close-model-btn', class: 'btn-close m-0', data: {bs_dismiss: 'modal'}, aria: {label: 'Close'}
       %div.modal-body
         = render 'shared/tweet_form'
