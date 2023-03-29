@@ -10,3 +10,19 @@
           = "@#{tweet_presenter.username} · #{tweet_presenter.created_at}"
       .p.mb-0
         = tweet_presenter.body
+      %div.d-flex.justify-content-between
+        %div
+          = link_to "#" do
+            = image_tag 'view', class: 'position-relative', style: "bottom: 2px", width: '14'
+        %div
+          = link_to "#" do
+            = image_tag 'replies', class: 'position-relative', style: "bottom: 2px", width: '14'
+        %div
+          = link_to "#" do
+            = image_tag 'retweet', class: 'position-relative', style: "bottom: 2px", width: '16'
+        %div
+          = link_to "#" do
+            = image_tag 'like', class: 'position-relative', style: "bottom: 2px", width: '14'
+        %div.btn-group
+          = link_to '#' do
+            = image_tag 'bookmark', class: 'position-relative', style: "bottom: 2px", width: '10'
