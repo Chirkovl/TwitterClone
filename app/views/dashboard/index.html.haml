@@ -4,6 +4,6 @@
   %div.mb-3
     = render 'shared/tweet_form'
   %div{id: "tweets"}
-    = render Tweet.order(created_at: :desc)
+    = render partial: 'tweets/tweet', collection: @tweets, as: :tweet_presenter
 .col
   Column

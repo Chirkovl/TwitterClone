@@ -1,19 +1,12 @@
-= turbo_frame_tag dom_id(tweet) do
+= turbo_frame_tag dom_id(tweet_presenter.tweet) do
   %div.tweet.d-flex.py-3.px-2
     .flex-shrink-0
-      = image_tag tweet.user.avatar, size: '48x48', class: "rounded-circle"
+      = image_tag tweet_presenter.user.avatar, size: '48x48', class: "rounded-circle"
     .flex-grow-1.ms-3
-      - if (Time.zone.now - tweet.created_at) > 1.day
-        .p
-          %span.fw-bolder
-            = "#{tweet.user.display_name}" 
-          %span.text-secondary
-            = "@#{tweet.user.username} · #{tweet.created_at.strftime("%b %-d")}"
-      - else
-        .p
-          %span.fw-bolder
-            = "#{tweet.user.display_name}" 
-          %span.text-secondary
-            = "@#{tweet.user.username} · #{time_ago_in_words(tweet.created_at)}"
+      .p
+        %span.fw-bolder
+          = "#{tweet_presenter.user.display_name}" 
+        %span.text-secondary
+          = "@#{tweet_presenter.user.username} · #{tweet_presenter.created_at}"
       .p.mb-0
-        = tweet.body
+        = tweet_presenter.body
