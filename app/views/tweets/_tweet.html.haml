@@ -10,19 +10,21 @@
           = "@#{tweet_presenter.username} · #{tweet_presenter.created_at}"
       .p.mb-0
         = tweet_presenter.body
-      %div.d-flex.justify-content-between
+      %div.d-flex.justify-content-between.align-items-center.action-links
         %div
-          = link_to "#" do
-            = image_tag 'view', class: 'position-relative', style: "bottom: 2px", width: '14'
+          = link_to "#", class: "text-decoration-none text-black views" do
+            = image_tag 'view', class: 'me-1', width: '14'
         %div
-          = link_to "#" do
-            = image_tag 'replies', class: 'position-relative', style: "bottom: 2px", width: '14'
+          = link_to "#", class: "text-decoration-none text-black replies" do
+            = image_tag 'replies', class: 'me-1', width: '14'
         %div
-          = link_to "#" do
-            = image_tag 'retweet', class: 'position-relative', style: "bottom: 2px", width: '16'
+          = link_to "#", class: "text-decoration-none text-black retweets" do
+            = image_tag 'retweet', class: 'me-1', width: '16'
         %div
-          = link_to "#" do
-            = image_tag 'like', class: 'position-relative', style: "bottom: 2px", width: '14'
+          = link_to tweet_likes_path(tweet_presenter.tweet), data: { "turbo-method": "post"}, class: "text-decoration-none text-black likes" do
+            = image_tag 'like', class: 'me-1', width: '14'
+            %span
+              = tweet_presenter.likes.size
         %div.btn-group
-          = link_to '#' do
-            = image_tag 'bookmark', class: 'position-relative', style: "bottom: 2px", width: '10'
+          = link_to '#', class: "text-decoration-none text-black bookmarks" do
+            = image_tag 'bookmark', class: 'me-1', width: '10'
